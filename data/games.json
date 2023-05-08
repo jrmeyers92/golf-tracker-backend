@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "course": "Links of Dardene",
+    "date": "2017-06-01",
+    "jake_score": 85,
+    "trent_score": 98
+  },
+  {
+    "id": 2,
+    "course": "Highlands Golf And Tennis",
+    "date": "2017-06-04",
+    "jake_score": 84,
+    "trent_score": 82
+  },
+  {
+    "id": 3,
+    "course": "Berry Hill Golf Coure",
+    "date": "2017-06-03",
+    "jake_score": 94,
+    "trent_score": 85
+  }
+]
