@@ -1,12 +1,12 @@
-const Game = require('../models/gameModel');
+const Course = require('../models/courseModel');
 const catchAsync = require('../utils/catchAsync');
 
-exports.createGame = catchAsync(async (req, res) => {
-  const newGame = await Game.create(req.body);
+exports.createCourse = catchAsync(async (req, res) => {
+  const newCourse = await Course.create(req.body);
 
   res.status(201).json({
     status: 'success',
-    game: newGame
+    game: newCourse
   });
 
   res.status(400).json({
@@ -15,15 +15,15 @@ exports.createGame = catchAsync(async (req, res) => {
   });
 });
 
-exports.getAllGames = async (req, res) => {
+exports.getAllCourses = async (req, res) => {
   try {
-    const games = await Game.find();
+    const courses = await Course.find();
 
     res.status(200).json({
       status: 'success',
-      results: games.length,
+      results: courses.length,
       data: {
-        games
+        courses
       }
     });
   } catch (err) {
@@ -34,13 +34,13 @@ exports.getAllGames = async (req, res) => {
   }
 };
 
-exports.getGame = async (req, res) => {
+exports.getCourse = async (req, res) => {
   try {
-    const game = await Game.findById(req.params.id);
+    const course = await Course.findById(req.params.id);
     res.status(200).json({
       status: 'success',
       data: {
-        game
+        course
       }
     });
   } catch (err) {
@@ -51,16 +51,16 @@ exports.getGame = async (req, res) => {
   }
 };
 
-exports.updateGame = async (req, res) => {
+exports.updateCourse = async (req, res) => {
   try {
-    const game = await Game.findByIdAndUpdate(req.params.id, req.body, {
+    const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
     });
     res.status(200).json({
       status: 'success',
       data: {
-        game
+        course
       }
     });
   } catch (err) {
@@ -70,9 +70,9 @@ exports.updateGame = async (req, res) => {
     });
   }
 };
-exports.deleteGame = async (req, res) => {
+exports.deleteCourse = async (req, res) => {
   try {
-    await Game.findByIdAndDelete(req.params.id);
+    await Course.findByIdAndDelete(req.params.id);
     res.status(204).json({
       status: 'success',
       data: null

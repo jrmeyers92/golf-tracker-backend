@@ -42,7 +42,6 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // 2) Check if user exists && password is correct
   const user = await User.findOne({ email }).select('+password');
-  console.log(user);
   // 3) If everything is okay, send a jwt back to client
 
   if (!user || !(await user.correctPassword(password, user.password))) {
