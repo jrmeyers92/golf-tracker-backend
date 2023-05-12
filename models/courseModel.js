@@ -23,9 +23,9 @@ const courseSchema = new mongoose.Schema({
   state: String,
   zip_code: Number,
   year_built: Number,
-  phone_number: Number,
+  phone_number: String,
   type: {
-    type: Number,
+    type: String,
     enum: ['public', 'private']
   },
   hole_count: {

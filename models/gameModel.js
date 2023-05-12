@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Users = require('./userModel');
 // const slugify = require('slugify');
 // const validator = require('validator');
 
@@ -14,8 +15,8 @@ const gameSchema = new mongoose.Schema({
   },
   course: {
     type: String
-    // required: [true, 'A game must have a course']
   },
+  // players: [Users],
   scores: [scoreSchema]
 });
 
