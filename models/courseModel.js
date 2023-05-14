@@ -15,23 +15,23 @@ const holeSchema = new mongoose.Schema({
 
 const courseSchema = new mongoose.Schema({
   name: String,
-  par: Number,
-  length: Number,
-  slope: Number,
-  address: String,
-  city: String,
-  state: String,
-  zip_code: Number,
-  year_built: Number,
-  phone_number: String,
-  type: {
-    type: String,
-    enum: ['public', 'private']
-  },
   hole_count: {
     type: Number,
     enum: [9, 18, 27]
   },
+  par: Number,
+  length: Number,
+  slope: Number,
+  type: {
+    type: String,
+    enum: ['public', 'private']
+  },
+  year_built: Number,
+  address: String,
+  city: String,
+  state: String,
+  zip_code: Number,
+  phone_number: String,
   website: String,
   holes: [holeSchema]
 });

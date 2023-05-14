@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-const Users = require('./userModel');
-// const slugify = require('slugify');
-// const validator = require('validator');
 
 const scoreSchema = new mongoose.Schema({
   name: String,
@@ -9,15 +6,41 @@ const scoreSchema = new mongoose.Schema({
 });
 
 const gameSchema = new mongoose.Schema({
+  name_of_round: String,
+  description_of_round: String,
   date: {
     type: Date,
-    required: [true, 'A game must have a date that we played']
+    required: [true, 'A game must have a date of when played']
   },
-  course: {
-    type: String
-  },
-  // players: [Users],
+  course: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Course'
+    }
+  ],
+  players: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User'
+    }
+  ],
   scores: [scoreSchema]
+});
+
+gameSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'course',
+    select: '-__v'
+  });
+  next();
+});
+
+gameSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'players',
+    select: '-__v -role'
+  });
+  next();
 });
 
 const Game = mongoose.model('Game', gameSchema);

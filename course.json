@@ -1,6 +1,6 @@
 {
   "name": "Berry Hills Golf Courese",
-  "holes": 9,
+  "hole_count": 9,
   "par": 36,
   "length": 3101,
   "slope": 112,
@@ -12,7 +12,7 @@
   "zip_code": 63044,
   "phone_number": "314-731-7979",
   "website": "https://www.berryhillgolf.com/",
-  "score_card": [
+  "holes": [
     {
       "hole_number": 1,
       "par": 5,
@@ -95,86 +95,4 @@
       "forward": 346
     }
   ]
-}[
-  ({
-    "hole_number": 1,
-    "par": 5,
-    "handicap": 3,
-    "blue_distance": 485,
-    "white_distance": 465,
-    "red_distance": 452,
-    "forward": 246
-  },
-  {
-    "hole_number": 2,
-    "par": 3,
-    "handicap": 17,
-    "blue_distance": 128,
-    "white_distance": 113,
-    "red_distance": 106,
-    "forward": 66
-  },
-  {
-    "hole_number": 3,
-    "par": 4,
-    "handicap": 11,
-    "blue_distance": 285,
-    "white_distance": 268,
-    "red_distance": 198,
-    "forward": 149
-  },
-  {
-    "hole_number": 4,
-    "par": 4,
-    "handicap": 9,
-    "blue_distance": 326,
-    "white_distance": 316,
-    "red_distance": 276,
-    "forward": 138
-  },
-  {
-    "hole_number": 5,
-    "par": 4,
-    "handicap": 13,
-    "blue_distance": 292,
-    "white_distance": 277,
-    "red_distance": 249,
-    "forward": 135
-  },
-  {
-    "hole_number": 6,
-    "par": 4,
-    "handicap": 7,
-    "blue_distance": 366,
-    "white_distance": 353,
-    "red_distance": 289,
-    "forward": 187
-  },
-  {
-    "hole_number": 7,
-    "par": 4,
-    "handicap": 3,
-    "blue_distance": 409,
-    "white_distance": 395,
-    "red_distance": 376,
-    "forward": 215
-  },
-  {
-    "hole_number": 8,
-    "par": 3,
-    "handicap": 15,
-    "blue_distance": 157,
-    "white_distance": 145,
-    "red_distance": 125,
-    "forward": 68
-  },
-  {
-    "hole_number": 9,
-    "par": 5,
-    "handicap": 1,
-    "blue_distance": 528,
-    "white_distance": 511,
-    "red_distance": 436,
-    "forward": 346
-  })
-]
+}

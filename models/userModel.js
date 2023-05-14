@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'please eneter your last name']
   },
+  username: String,
   email: {
     type: String,
     required: [true, 'please eneter your email'],
