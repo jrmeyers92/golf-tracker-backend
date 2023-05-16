@@ -3,5 +3,9 @@
   "description_of_round": "this is the description",
   "date": "5/10/2023",
   "course": ["64604afcb2d7e1a34b58fadf"],
-  "players": ["6460238585a7629b4ac4f3bd"]
+  "scores": {
+    "player": "6460238585a7629b4ac4f3bd",
+    "score": 74,
+    "hole_scores": [4, 3, 6, 5, 4, 3, 4, 5, 6]
+  }
 }

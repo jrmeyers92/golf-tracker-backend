@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 
 const scoreSchema = new mongoose.Schema({
-  name: String,
-  score: Number
+  player: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    max: 1
+  },
+  score: Number,
+  hole_scores: [Number]
 });
 
 const gameSchema = new mongoose.Schema({
@@ -16,12 +21,6 @@ const gameSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.ObjectId,
       ref: 'Course'
-    }
-  ],
-  players: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'User'
     }
   ],
   scores: [scoreSchema]

@@ -42,6 +42,12 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords are not the same'
     }
   },
+  friends: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User'
+    }
+  ],
   handicap: Number,
   passwordChangedAt: Date,
   passwordResetToken: String,
