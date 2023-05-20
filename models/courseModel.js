@@ -20,6 +20,12 @@ const courseSchema = new mongoose.Schema({
     enum: [9, 18, 27]
   },
   par: Number,
+  price_9: Number,
+  price_18: Number,
+  cart_fee_9: Number,
+  cart_fee_18: Number,
+  price_with_cart_9: Number,
+  price_with_cart_18: Number,
   length: Number,
   slope: Number,
   type: {
