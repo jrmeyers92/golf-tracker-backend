@@ -1,5 +1,7 @@
 const Game = require('../models/gameModel');
 const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
+const factory = require('./handlerFactory');
 
 exports.createGame = catchAsync(async (req, res) => {
   const newGame = await Game.create(req.body);
@@ -32,23 +34,5 @@ exports.getGame = catchAsync(async (req, res) => {
   });
 });
 
-exports.updateGame = catchAsync(async (req, res) => {
-  const game = await Game.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true
-  });
-  res.status(200).json({
-    status: 'success',
-    data: {
-      game
-    }
-  });
-});
-
-exports.deleteGame = catchAsync(async (req, res) => {
-  await Game.findByIdAndDelete(req.params.id);
-  res.status(204).json({
-    status: 'success',
-    data: null
-  });
-});
+exports.updateGame = factory.updateOne(Game);
+exports.deleteGame = factory.deleteOne(Game);
