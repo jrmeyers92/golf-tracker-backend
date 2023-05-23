@@ -3,15 +3,6 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const factory = require('./handlerFactory');
 
-exports.createGame = catchAsync(async (req, res) => {
-  const newGame = await Game.create(req.body);
-
-  res.status(201).json({
-    status: 'success',
-    game: newGame
-  });
-});
-
 exports.getAllGames = catchAsync(async (req, res) => {
   const games = await Game.find();
 
@@ -24,15 +15,7 @@ exports.getAllGames = catchAsync(async (req, res) => {
   });
 });
 
-exports.getGame = catchAsync(async (req, res) => {
-  const game = await Game.findById(req.params.id);
-  res.status(200).json({
-    status: 'success',
-    data: {
-      game
-    }
-  });
-});
-
+exports.getGame = factory.getOne(Game);
+exports.createGame = factory.createOne(Game);
 exports.updateGame = factory.updateOne(Game);
 exports.deleteGame = factory.deleteOne(Game);
