@@ -27,7 +27,4 @@ router
     courseController.deleteCourse
   );
 
-
-  
-
 module.exports = router;
